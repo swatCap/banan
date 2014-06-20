@@ -1,0 +1,178 @@
+
+.adv{
+    position: relative;
+	height:400px;
+	width: 240px;
+    border-radius: 5px;    
+//	-webkit-box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+//	-moz-box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+//	box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+	margin-bottom: 15px;	
+}
+
+/*
+.adv:hover{
+    position: relative;
+	height:400px;
+	width: 240px;
+    border-radius: 5px;    
+	margin-bottom: 15px;
+	-webkit-box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+	-moz-box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+	box-shadow: 0px 0px 50px 3px rgba(1, 1, 1, 0.6);
+}
+*/
+
+.advImgContainer{
+    position: relative;
+	height:64%;
+	width:100%;
+    border-radius: 5px 5px 0 0;
+	
+    -webkit-box-shadow: inset 0px -100px 30px -25px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    inset 0px -100px 30px -25px rgba(50, 50, 50, 0.9);
+	box-shadow:         inset 0px -100px 30px -25px rgba(50, 50, 50, 0.9);
+}
+
+.daysBeforeLeave {
+position: absolute;
+right: 0;
+top: 0;
+text-align: center;
+height: 53px;
+width: 45px;
+background-color: white;
+border-radius: 0px 4px 0px 3px;
+padding-top: 3px;
+}
+
+.advContent{
+	height: 36%;
+	width: 100%;
+	background-color: white;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    //opacity: 0.3;
+//	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+//    -moz-box-shadow:    inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+//    box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.advImg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.days{
+    position: absolute;            
+    top: -5px;
+    right: -5px;
+    z-index:1;
+}
+
+.countryInfo{
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    color: white;
+    padding-bottom: 27px;
+    padding-left: 2px;
+    padding-right: 10px;    
+    z-index: 10;
+    right: 0;
+    font-family: RotondaC;
+}
+
+.stars{
+    position: absolute;
+    font-size: 14px;
+    bottom: 0;
+    text-align; left;
+    width: 100%;
+    color:yellow;
+    text-shadow: 0px 0px 2px white;
+    padding: 5px;
+    z-index: 10;
+}
+
+
+
+.hotelName{
+    position: absolute;
+    top:6%;
+    font-size:20px;
+    left: 3%;
+    z-index: 10;
+    font-family: HelvL;
+}
+
+.propName{
+    position: absolute;
+    float:left;
+    color:gray;
+}
+
+.prop{
+    position: absolute;
+    
+}
+
+.apartment{
+    position: absolute;
+    top: 19.5%;
+    left: 5%;
+    z-index: 10;
+}
+
+.feed {
+	position: absolute;
+	top: 30%;
+	left: 5%;
+	z-index: 10;
+}
+
+.period{
+    position: absolute;
+    top: 44%;
+    left: 5%;
+    z-index: 10;
+}
+
+.country{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    padding-right: 5px;
+    z-index: 10;
+}
+
+.source {
+position: absolute;
+bottom: 5%;
+padding-left: 5%;
+padding-top: 5px;
+z-index: 10;
+width: 100%;
+border-top: 1px solid rgba(85, 85, 85, 0.34);
+height: 12px;
+}
+
+.price {
+	position: absolute;
+	bottom: 20%;
+	right: 5%;
+	z-index: 10;
+}
+
+.linkImg {
+position: absolute;
+width: 10px;
+height: 20px;
+bottom: 2.2%;
+right: 3%;
+z-index: 0;
+}

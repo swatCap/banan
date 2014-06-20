@@ -1,0 +1,91 @@
+@(tour: ua.banan.data.model.TourFull)
+
+@import helper._
+
+
+<div class="adv" >
+    
+    <div class="daysBeforeLeave">
+        <div style="margin-bottom: 2px; font-family: HelvL; font-size: 13px; color: gray;">Через</div>
+        <div style="margin-bottom: -1px; font-family: HelvUL; font-size: 22px; color: red;">@tour.getDaysBeforeLeave()</div>
+        <div style="font-family: HelvL; font-size: 13px; color: gray;">@ua.banan.web.AdvDivProperties.getRightWordForm(tour.getDaysBeforeLeave(), new ua.banan.web.WordCase("день", "дня", "дней"))</div>
+    </div>
+    
+    <div class="advImgContainer">
+        
+        <img class="advImg" src='@tour.getPhoto().getUrl()'/>
+        <div class="countryInfo">@Html(HtmlFormat.escape(tour.getCountryInfoString()).toString.replace("\n", "<br />"))</div>
+        <div class="stars">@for(i <- 1 to tour.getStars()){&#9734}</div>
+        
+    </div>        
+    
+	<div class="advContent">
+        <div class="item-filter"></div>    
+        
+        @if(tour.getHotelName() != null && !tour.getHotelName().equalsIgnoreCase("NONE") && !tour.getHotelName().isEmpty()){
+        	<div class="hotelName" style="font-size: @tour.getHotelFontSizeInPx()px;">@tour.getHotelName()</div>
+    	}
+        
+        @if(tour.getRoomType() != null){
+	        <div class = "apartment" style="font-family: HelvL; font-size: 13px; 
+		        @if(tour.getHotelName() == null || tour.getHotelName().equalsIgnoreCase("NONE")  || tour.getHotelName().isEmpty()){
+		        	top: 8.5%;
+		    	}	      
+		    	"  	
+	        >
+	            <font color="gray">Номер:&nbsp;&nbsp;&nbsp; &nbsp;</font> <font color="black">@tour.getRoomType()</font>
+	        </div>
+        }
+        
+        @if(tour.getFeedPlan() != null){
+	        <div class="feed" style="font-family: HelvL; font-size: 13px; 
+	        	@if(tour.getHotelName() == null || tour.getHotelName().equalsIgnoreCase("NONE") || tour.getHotelName().isEmpty()){
+		        	top: 23%;
+		    	}	
+		    	"
+	        >
+	            <font color="gray">Питание:&nbsp;&nbsp;</font> <font color="black">@tour.getFeedPlan()</font>            
+	        </div>
+        }
+        
+        <div class="period" style="font-family: HelvL; font-size: 13px; 
+        		@if(tour.getHotelName() == null || tour.getHotelName().equalsIgnoreCase("NONE") || tour.getHotelName().isEmpty()){
+		        	top: 38.5%;
+		    	}	
+		    	"
+        >
+            <font color="black"><b>@tour.getNightsCount() @ua.banan.web.AdvDivProperties.getRightWordForm(tour.getNightsCount(), new ua.banan.web.WordCase("ночь", "ночи", "ночей"))&nbsp;</b></font> <font color="gray">@tour.getPeriodString()</font>            
+        </div>
+        
+        <noindex>
+	        <div class="country" style="font-family: HelvL; font-size: 13px; color: rgb(107, 107, 107);
+	        	@if(tour.getHotelName() == null || tour.getHotelName().equalsIgnoreCase("NONE") || tour.getHotelName().isEmpty()){
+		        	top: 57%;
+		    	}
+		    	"
+	        >
+	            <font color="gray" > 
+	            @if(tour.isManyCountries()){
+	            	Страны:&nbsp;
+	            } else {
+	            	Страна:&nbsp;
+	            }
+	            </font> @Html(tour.getCountriesString())
+	        </div>
+        </noindex>
+        
+        <noindex>
+	        <a class="source" href="@tour.getUrl()" rel="nofollow" target="_blank" style="font-family: HelvL; font-size: 13px;">
+	            <font color="gray" > Источник:&nbsp;</font> <font color="red">@tour.getSourceName()</font>     
+	        </a>
+        </noindex>
+        
+        <img class="linkImg" src="/assets/images/arrow-right.png">
+        	
+        </img>
+        
+        <div class="price" style="font-family: HelvL; font-size: 18px; color: red;">
+            @tour.getPrice()&nbsp;грн     
+        </div>
+    </div>   
+</div>

@@ -1,0 +1,38 @@
+@()
+
+<div class="adv" style="width: 970px; position: absolute; left: 0px; top: 0px; height: auto; padding-top: 10px; padding-left: 20px; padding-bottom: 10px; font-family: RotondaC; font-size: 25px; background-color: rgba(255, 255, 255, 0.65);; margin-top: 10px; -webkit-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	-moz-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6);">
+	  
+	  <div id="partnerContactTitle" style="font-size: 18px;">Оставьте свои контактные данные, и мы обсудим любые предложения по сотрудничеству!</div>
+	  
+	  <div id="partnerNameLabel" class="formLabel">Представьтесь</div>
+	  <input id="nameComment" type="text" name="mail" size="30" maxlength="30"/>
+	  
+	  <div id="partnerEmailLabel" class="formLabel">E-mail</div>
+	  <input id="mailComment" type="text" name="name" size="30" maxlength="30"/>	  	  
+	  
+	  <div id="partnerPhoneLabel" class="formLabel">Телефон</div>
+	  <input id="phoneComment" type="text" name="comment" size="30" maxlength="30"/>
+	  
+	  <div id="partnerCommentLabel" class="formLabel">Комментарий</div>
+	  <input id="commentComment" type="text" name="comment" style="margin-bottom: 15px;" size="100" maxlength="200"/>
+	
+	  <div id="submitPartner" class="submitBtn" onclick="submitPartner()">Отправить</div>
+	  
+  <script type="text/javascript">	  	 
+   	
+		function submitPartner()
+		{					
+			$.post( "/partner/submit", { nm: document.getElementById('nameComment').value, 
+										 em: document.getElementById('mailComment').value,
+										 ph: document.getElementById('phoneComment').value,
+										 cm: document.getElementById('commentComment').value}, 
+			 function( data ) {
+			  	document.getElementById('light').style.display='block';		  
+			 });
+			
+			document.getElementById('fade').style.display='block';
+		}
+	
+	</script>
+	  
+</div>

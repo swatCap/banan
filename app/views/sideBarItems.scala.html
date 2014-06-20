@@ -1,0 +1,19 @@
+@(title : String, items : List[ua.banan.data.model.presentation.CountPresentation])	
+
+	@if(items != null && !items.isEmpty()) {
+		<h1>@title</h1>
+		<div>
+	    	@for(item <- items){
+		    	<div class="lsbItemContainer" >
+		    		<a href="@item.getUrl()" style="width=100%, height=100%">
+					    <img class="lsbItemImg" src="@item.getPhotoImgUrl()" />
+					    <div class="lsbItemText">
+					        <div style="margin-bottom: 10px; font-family: HelvL; font-size: 18px; color: black;">@item.getName()</div>
+					        <div style="font-family: HelvL; font-size: 14px;"><font color="gray">Туров:&nbsp;</font><font color="red">@item.getCount()</font></div>
+					    </div>
+				    </a>
+				</div>
+	    	}    	
+    	
+    	</div>
+	}

@@ -1,0 +1,20 @@
+@(noResultsFound : Boolean, isAdditionalResults : Boolean, searchResults : List[ua.banan.data.model.TourFull])		                      
+   
+	@if(noResultsFound) {
+		<div class="adv" style="width: 970px; position: absolute; left: 0px; top: 0px; height: auto; padding-top: 10px; padding-left: 20px; padding-bottom: 10px; font-family: HelvL; font-size: 13px; background-color: rgba(255, 255, 255, 0.65);; margin-top: 10px; -webkit-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	-moz-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6);">
+			По этому запросу горящих туров сейчас нет. Возможно, Вас заинтересуют объявления ниже 
+		</div>
+	}
+	
+	@if(isAdditionalResults && searchResults != null && !searchResults.isEmpty()) {
+		<div class="adv" style="width: 970px; position: absolute; left: 0px; top: 0px; height: auto; padding-top: 10px; padding-left: 20px; padding-bottom: 10px; font-family: HelvL; font-size: 13px; background-color: rgba(255, 255, 255, 0.65);; margin-top: 10px; -webkit-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	-moz-box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6); 	box-shadow: 0px 0px 0px 0px rgba(1, 1, 1, 0.6);">
+			Другие пользователи только что просматривали следующие туры:
+		</div>
+	}
+	
+	@if(searchResults != null && !searchResults.isEmpty()) {
+    	@for(searchResult <- searchResults){        	
+        	@searchResultItem(searchResult)        	
+    	}    	    		
+	}
+	

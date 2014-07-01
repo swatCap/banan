@@ -59,7 +59,7 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */
-.flex-control-nav {bottom: 40px; display: table; margin: 0 auto; position: relative; text-align: center;}
+.flex-control-nav {bottom: -50px; display: table; margin: 0 auto; position: relative; text-align: center;}
 .flex-control-nav li {display: table-cell; float: left; line-height: 0; zoom: 1;}
 .flex-control-paging li a {width: 12px; height: 12px; display: block; background: #efefef; background: rgba(255,255,255,0.45); cursor: pointer; text-indent: -9999px; margin: 3px 10px; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; -webkit-transition: all 0.15s ease; -moz-transition: all 0.15s ease; -o-transition: all 0.15s ease; -ms-transition: all 0.15s ease; transition: all 0.15s ease;}
 .flex-control-paging li a:hover { background: #f6f6f6; background: rgba(255,255,255,0.75); }

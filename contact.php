@@ -874,6 +874,20 @@ if (!class_exists('Contact')) {
             }
         }
         
+        public function saveToFile($submittedData)
+        {
+            $file = 'participants.txt';
+            // Open the file to get existing content
+            $current = file_get_contents($file);
+            // Append a new person to the file
+            $current .= print_r($submittedData,true);
+            $current .= "\n";
+            // Write the contents back to the file
+            file_put_contents($file, $current);
+        }
+        
+        
+        
         // }}}
         // {{{ sendMail()
         
@@ -1049,6 +1063,9 @@ if (!class_exists('Contact')) {
                 );
             }
             
+            
+            $this->saveToFile($submittedData);
+            
             /*
              * Mail it and catch the result to further check if mail has sent or not
              */
@@ -1056,7 +1073,7 @@ if (!class_exists('Contact')) {
             /*
              * Now check if the mailing was successful
              */
-            if ($mailed) {
+//            if ($mailed) {            
                 /*
                  * if sender has checked the checkbox to get acknowledgement,
                  * then send a confirmation mail
@@ -1095,22 +1112,22 @@ if (!class_exists('Contact')) {
                 $this->_response['message']	.=	'Your message has been sent!';
                 // if acknowledgement opted, then output a message to view inbox  ## Commented as you need not
                 //if (isset($submittedData['acknowledge']) and ($submittedData['acknowledge']==='1')) {
-                $this->_response['message']	.=	' Please check your acknowledgement in your email (inbox/spam folder).';
+                //$this->_response['message']	.=	' Please check your acknowledgement in your email (inbox/spam folder).';
                 //}
                 $this->_response['message']	.=	'</div>';
                 echo json_encode($this->_response);
                 exit(0);
-            } else {
-                /*
-                 * Else give Out an error message and reset
-                 */
-                $this->_response['status']	=	'success';
-                $this->_response['message']	=	'<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-                $this->_response['message']	.=	'Some Error Occured!';
-                $this->_response['message']	.=	'</div>';
-                echo json_encode($this->_response);
-                exit(0);
-            }
+//            } else {
+//                /*
+//                 * Else give Out an error message and reset
+//                 */
+//                $this->_response['status']	=	'success';
+//                $this->_response['message']	=	'<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+//                $this->_response['message']	.=	'Some Error Occured!';
+//                $this->_response['message']	.=	'</div>';
+//                echo json_encode($this->_response);
+//                exit(0);
+//            }
         }
         
         // }}}

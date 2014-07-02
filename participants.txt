@@ -7,3 +7,19 @@ Array
     [contact_message] => sdfsdf
 )
 
+Array
+(
+    [contact_name] => 323123
+    [contact_email] => 32423@2323.cdf
+    [contact_subject] => 2323
+    [contact_message] => 232323
+)
+
+Array
+(
+    [contact_name] => 1
+    [contact_email] => 2@34.cod
+    [contact_subject] => 342
+    [contact_message] => dfdfs
+)
+

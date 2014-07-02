@@ -1109,7 +1109,7 @@ if (!class_exists('Contact')) {
                 
                 $this->_response['status']	=	'success';
                 $this->_response['message']	=	'<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-                $this->_response['message']	.=	'Your message has been sent!';
+                $this->_response['message']	.=	'Дякуємо за участь! Кожна людина для нас важлива! Чекайте на дзвінок.';
                 // if acknowledgement opted, then output a message to view inbox  ## Commented as you need not
                 //if (isset($submittedData['acknowledge']) and ($submittedData['acknowledge']==='1')) {
                 //$this->_response['message']	.=	' Please check your acknowledgement in your email (inbox/spam folder).';
